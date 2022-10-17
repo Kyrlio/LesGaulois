@@ -50,13 +50,10 @@ public class Village {
 //		System.out.println(gaulois);
 //		null
 //		Les tableaux sont initialisés a null donc il m'affiche null car il n'y a aucun gaulois a cette case
-		Gaulois obelix = new Gaulois("Obélix", 10);
+		Gaulois obelix = new Gaulois("Obélix", 25);
 		village.setChef(abraracourcix);
 		village.ajouterHabitant(obelix);
 		village.afficherVillageois(abraracourcix);
-		
-		
-
 		
 	}
 	
