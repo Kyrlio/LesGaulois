@@ -14,7 +14,6 @@ public class Scenario {
 		panoramix.booster(obelix);
 		obelix.parler("Par Bénélos, ce n'est pas juste !");
 		panoramix.booster(asterix);
-		asterix.parler("Merci Druide, je sens que ma force est 6 fois décuplée");
 		asterix.parler("Bonjour à tous");
 		minus.parler("UN GAU... UN GAUGAU...");
 		for (int i = 0 ; i < 3 ; i++) {
