@@ -31,8 +31,8 @@ public class Druide {
 	}
 	
 	public void preparerPotion() {
-		Random random_number = new Random();
-		forcePotion = random_number.nextInt(effetPotionMin);
+		Random randomNumber = new Random();
+		forcePotion = randomNumber.nextInt(effetPotionMin);
 		forcePotion += effetPotionMax - effetPotionMin;
 		
 		if (forcePotion > 7) {
@@ -44,7 +44,7 @@ public class Druide {
 	}
 	
 	public void booster(Gaulois gaulois) {
-		if (gaulois.getNom() == "Obélix") {
+		if ("Obélix".equals(gaulois.getNom())) {
 			parler("Non Obélix !... Tu n'auras pas de potion magique!");
 		} else {
 			gaulois.boirePotion(forcePotion);

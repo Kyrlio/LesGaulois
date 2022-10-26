@@ -39,7 +39,7 @@ public class Gaulois {
 	
 	public void frapper(Romain romain) {
 		System.out.println(nom + " envoie un grand coup dans la mâchoire de " + romain.getNom());
-		Equipement trophees[] = romain.recevoirCoup((force / 3) * effetPotion);
+		Equipement[] trophees = romain.recevoirCoup((force / 3) * effetPotion);
 		for (int i = 0; trophees != null && i < trophees.length; i++, nbTrophees++) {
 			this.trophees[nbTrophees] = trophees[i];
 		}
@@ -55,14 +55,29 @@ public class Gaulois {
 		parler("Merci Druide, je sens que ma force est " + forcePotion + " fois décuplée");
 	}
 	
+	public void faireUneDonnation(Musee museeGaule) {
+		if (this.nbTrophees > 0) {
+			parler("Je donne au musee tous mes trophees :");
+			for(int i = 0 ; i < this.nbTrophees ; i++) {
+				System.out.println("- " + trophees[i]);
+				museeGaule.donnerTrophees(this, trophees[i]);
+			}
+		}
+		this.nbTrophees = 0;
+	}
+	
 	public static void main(String[] args) {
-//		Gaulois asterix = new Gaulois("Asterix", 8);
+		Gaulois asterix = new Gaulois("Asterix", 8);
+		Musee musee = new Musee();
+		asterix.trophees[0] = Equipement.BOUCLIER;
+		asterix.nbTrophees = 2;
 //		Romain achille = new Romain("Achille", 2);
 //		System.out.println(asterix);
 //		asterix.prendreParole();
 //		asterix.parler("oui");
 //		asterix.boirePotion(3);
 //		asterix.frapper(achille);
+		asterix.faireUneDonnation(musee);
 	}
 }
 
